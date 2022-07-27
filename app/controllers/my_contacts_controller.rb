@@ -1,5 +1,5 @@
 class MyContactsController < ApplicationController
-  def contact_list
+  def first_contact
     contact = Contact.first
 
     render json: {
@@ -8,5 +8,10 @@ class MyContactsController < ApplicationController
              email: contact.email,
              phone_number: contact.phone_number,
            }
+  end
+
+  def all
+    contacts = Contact.all
+    render json: contacts
   end
 end
